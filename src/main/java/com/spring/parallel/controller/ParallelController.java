@@ -4,6 +4,7 @@ import com.spring.parallel.mock.dto.MockResponse;
 import com.spring.parallel.service.ParallelProcessService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,11 +30,11 @@ public class ParallelController {
 
     // Endpoint to trigger parallel data fetching
     @GetMapping("/parallel")
-    public CompletableFuture<List<MockResponse>> getParallelData() {
+    public ResponseEntity<List<MockResponse>> getParallelData() {
         log.info("Request received for 'parallel' endpoint.");
-        CompletableFuture<List<MockResponse>> listCompletableFuture = parallelProcessService.fetchAllData();
+        List<MockResponse> listCompletableFuture = parallelProcessService.fetchAllData().join();
         log.info("Request processing completed for 'parallel' endpoint.");
-        return listCompletableFuture;
+        return ResponseEntity.ok(listCompletableFuture);
     }
 
     // Endpoint to trigger parallel data fetching with exception in one task
