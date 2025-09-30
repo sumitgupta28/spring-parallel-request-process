@@ -1,6 +1,7 @@
 package com.spring.parallel.mock.controller;
 
 import com.spring.parallel.mock.dto.MockResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @RequestMapping("/mock")
+@Tag(name = "Down Stream Mock APIs")
 public class MockController {
 
 

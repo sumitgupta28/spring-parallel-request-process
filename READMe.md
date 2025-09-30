@@ -1,11 +1,8 @@
-
 ### fetchData
 
 ```bash
 curl http://localhost:8080/api/fetchData
 ```
-
-
 
 ### parallel
 
@@ -24,8 +21,6 @@ curl http://localhost:8080/api/parallelWithExceptionIOneTask
 ```bash
 curl http://localhost:8080/api/parallelWithGlobalTimeout
 ```
-
-
 
 ```bash
 curl http://localhost:8080/api/parallelWithIndividualTaskTimeout

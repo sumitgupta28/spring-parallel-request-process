@@ -20,7 +20,6 @@ public class ParallelProcessService {
     private final RestTemplate restTemplate;
     private final Executor executor = Executors.newFixedThreadPool(10);
 
-
     public CompletableFuture<MockResponse> fetchData(String url) {
         return CompletableFuture.supplyAsync(() -> restTemplate.getForObject(url, MockResponse.class), executor);
     }

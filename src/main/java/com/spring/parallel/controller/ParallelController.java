@@ -2,6 +2,7 @@ package com.spring.parallel.controller;
 
 import com.spring.parallel.mock.dto.MockResponse;
 import com.spring.parallel.service.ParallelProcessService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 @RequestMapping("/api")
 @Slf4j
 @RequiredArgsConstructor
+@Tag(name = "Parallel APIs")
 public class ParallelController {
 
     private final ParallelProcessService parallelProcessService;
