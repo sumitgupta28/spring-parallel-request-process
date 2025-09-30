@@ -20,8 +20,8 @@ public class LoggingAspect {
             stopWatch.start();
             result = joinPoint.proceed();
             stopWatch.stop();
-        }finally {
-            log.info(" {} took {} ms" , joinPoint.getSignature().getName(),stopWatch.getTotalTimeMillis() );
+        } finally {
+            log.info(" {} took {} ms", joinPoint.getSignature().getName(), stopWatch.getTotalTimeMillis());
         }
         return result;
     }
